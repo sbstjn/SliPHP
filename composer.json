@@ -2,9 +2,9 @@
     "name": "sbstjn/sliphp",
     "version": "0.1.0",
     "type": "library",
-    "keywords": ["framework", "views", "layout", "rendering"],
-    "homepage": "https://sbstjn.github.io/SlipPHP",
-    "description": "Atomic view and layout engine",
+    "keywords": ["framework", "view", "layout", "render", "engine", "template"],
+    "homepage": "https://github.com/sbstjn/SliPHP",
+    "description": "Atomic view and layout engine for PHP 5.4 and above",
     "license": "MIT",
     "authors": [
         {
