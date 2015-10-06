@@ -12,7 +12,9 @@
             "email": "mail@sbstjn.com"
         }
     ],
-    "require": {},
+    "require": {
+        "php": ">= 5.4.4"
+    },
     "autoload": {
         "files": ["load.php"]
     }
