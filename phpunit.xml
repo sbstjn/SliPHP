@@ -1,0 +1,7 @@
+<phpunit bootstrap="load.php">
+  <testsuites>
+    <testsuite name="SliPHP">
+      <directory>tests</directory>
+    </testsuite>
+  </testsuites>
+</phpunit>
