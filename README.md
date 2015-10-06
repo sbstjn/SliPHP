@@ -1,6 +1,18 @@
-# SliPHP
-
-Atomic view and layout engine for PHP 5.4 and above.
+<p align="center">
+    <img src="https://cdn.rawgit.com/sbstjn/SliPHP/master/logo.svg"
+         height="320">
+</p>
+<p align="center">
+    <a href="https://circleci.com/gh/sbstjn/SliPHP/">
+        <img src="https://img.shields.io/circleci/project/sbstjn/SliPHP/master.svg"
+             alt="Circle CI">
+    </a>
+    <a href="https://packagist.org/packages/sbstjn/sliphp">
+        <img src="https://img.shields.io/packagist/v/sbstjn/sliphp.svg"
+             alt="Packagist">
+    </a>
+</p>
+<p align="center"><sup><strong>Atomic view and layout engine for PHP 5.4 and above.</strong></sup></p>
 
 ## Usage
 
