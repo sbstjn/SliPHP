@@ -4,10 +4,16 @@ Namespace SliPHP;
 
 Trait locals
 {
+    /**
+     * Storage for locals
+     *
+     * @var array
+     */
     private $store = array();
 
     /**
-     * Set local variable
+     * @param $name Local name
+     * @param $data Local value
      */
     public function set($name, $data)
     {
@@ -15,7 +21,10 @@ Trait locals
     }
 
     /**
-     * Get local variable
+     * Get local value
+     *
+     * @param $name Local name
+     * @return mixed
      */
     public function get($name)
     {

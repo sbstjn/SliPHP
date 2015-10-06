@@ -5,13 +5,15 @@ Namespace SliPHP;
 Trait render
 {
     /**
-     * Render view
+     * Render view if object is converted to string
+     *
+     * @return string
      */
-    public function render()
+    public function __toString()
     {
-        $render = function (View $view, $file) {
+        $render = function (&$view, &$file) {
             ob_start();
-            require_once $file;
+            require $file;
 
             $data = ob_get_contents();
             ob_end_clean();

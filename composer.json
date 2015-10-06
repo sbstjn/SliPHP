@@ -1,0 +1,19 @@
+{
+    "name": "sbstjn/sliphp",
+    "version": "0.1.0",
+    "type": "library",
+    "keywords": ["framework", "views", "layout", "rendering"],
+    "homepage": "https://sbstjn.github.io/SlipPHP",
+    "description": "Atomic view and layout engine",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "sbstjn",
+            "email": "mail@sbstjn.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "files": ["load.php"]
+    }
+}

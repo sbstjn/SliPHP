@@ -8,7 +8,7 @@ To use **SliPHP** please configure the global constant `SLIPHP_VIEWS` and set it
 
 ### Basics
 
-As mentioned above, just configure a constant and you are good to go …
+As mentioned above, just configure the needed constant and you are good to go …
 
 ```php
 define ('SLIPHP_VIEWS', '/var/www/views/');
@@ -24,32 +24,28 @@ The folder structure inside your `SLIPHP_VIEWS` path should look something like 
 
 ### Views
 
-It's that simple to render a view inside your `SLIPHP_VIEWS` folder:
+It's that simple to render a view from your `SLIPHP_VIEWS` folder:
 
-```
+```php
 $view = new SliPHP\View('index');
-die($view->render());
+die($view);
 ```
 
 Your `index.php` could look like this:
 
-```php
+```html
 <strong>Hi!</strong>
 ```
 
 ### Layouts
 
-Of course you want to have separate file for your layout, which will be wrapped around your `index` view: 
+Of course you want to have a separate file for your layout, which will be wrapped around your `index` view: 
 
 ```php
-// Configure View
-$view = new SliPHP\View('index');
-
-// Configure Layout
 $layout = new SliPHP\Layout('default');
-$layout->set('body', $view->render());
+$layout->body(new SliPHP\View('index'));
 
-die($layout->render());
+die($layout);
 ```
 
 Your `layouts/default.ph` file could look like this:
@@ -61,7 +57,7 @@ Your `layouts/default.ph` file could look like this:
     <title>SliPHP</title>
     <meta charset="utf-8" />
   </head>
-  <body><?=$view->get('body')?></body>
+  <body><?=$view->body()?></body>
 </html>
 ```
 
@@ -78,7 +74,7 @@ For sure **SliPHP** supports loading single files and have them rendered into yo
     <title>SliPHP Example</title>
     <?=$view->block('header')?>
   </head>
-  <body><?=$view->get('body')?></body>
+  <body><?=$view->body()?></body>
 </html>
 ```
 
