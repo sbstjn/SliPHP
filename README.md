@@ -12,6 +12,12 @@
 
 To use **SliPHP** please configure the global constant `SLIPHP_VIEWS` and set it to the directory where your *views*, *layouts* and *blocks* are located. 
 
+### Install
+
+```bash
+composer require sbstjn/sliphp
+```
+
 ### Basics
 
 As mentioned above, just configure the needed constant and you are good to go …
