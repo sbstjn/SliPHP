@@ -110,6 +110,20 @@ Blocks can load other blocks as well, so feel free to move your styles and scrip
 <?=$view->block('script')?>
 ```
 
+### Apply
+
+If you want to apply a function or a list of functions to a data object, you can use the `$view->apply` function to modify your data:
+
+```php
+<strong><?=$view->apply('KATZE', 'ucfirst|strtolower')?><?=$view->apply('KATZE', 'strtolower|ucfirst')?></strong>
+```
+
+Will be rendered into:
+
+```html
+<strong>katzeKatze</strong>
+```
+
 ## Change log
 
 Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
