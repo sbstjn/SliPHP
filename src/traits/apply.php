@@ -11,12 +11,12 @@ Trait apply
      * @param $filter Single PHP function or list of functions for example "strtolower|ucfirst"
      * @return mixed
      */
-    public function apply($data, $filter)
+    public function apply($data, $modifier)
     {
-        $list = explode('|', $filter);
+        $list = explode('|', $modifier);
         
-        foreach ($list as $filter) {
-            $data = $filter($data);
+        foreach ($list as $function) {
+            $data = $function($data);
         }
         
         return $data;
