@@ -13,6 +13,7 @@ class View
     use render; // Load render support
     use locals; // Load locals support
     use blocks; // Load blocks support
+    use apply;  // Load apply support
 
     /**
      * Sub path for view folder
@@ -26,7 +27,7 @@ class View
      *
      * @throws \RuntimeException
      */
-    static function check()
+    static public function check()
     {
         if (!defined('SLIPHP_VIEWS')) {
             throw new \RuntimeException('Please define global constant SLIPHP_VIEWS');
@@ -39,7 +40,7 @@ class View
      * @param $name File name without extension
      * @throws \Exception
      */
-    function __construct($name)
+    public function __construct($name)
     {
         self::check();
         

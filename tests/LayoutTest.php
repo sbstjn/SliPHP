@@ -30,7 +30,7 @@ class LayoutTest extends PHPUnit_Framework_TestCase
         $layout->body(new SliPHP\View('empty'));
         
         $this->assertInstanceOf('SliPHP\View', $layout->body());
-        $this->assertEquals('', $layout->body());
+        $this->assertEquals('', (string)$layout->body());
     }
     
     public function testSuccessRenderingBody()
@@ -39,14 +39,14 @@ class LayoutTest extends PHPUnit_Framework_TestCase
         $layout->body(new SliPHP\View('html'));
         
         $this->assertInstanceOf('SliPHP\View', $layout->body());
-        $this->assertEquals('<strong>Hi!</strong>', $layout->body());
-        $this->assertEquals('<div><strong>Hi!</strong></div>', $layout);
+        $this->assertEquals('<strong>Hi!</strong>', (string)$layout->body());
+        $this->assertEquals('<div><strong>Hi!</strong></div>', (string)$layout);
     }
     
     public function testSuccessRenderingBlockInLayout()
     {
         $layout = new SliPHP\Layout('layout-block');
 
-        $this->assertEquals('<div><span></span></div>', $layout);
+        $this->assertEquals('<div><span></span></div>', (string)$layout);
     }
 }
