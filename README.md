@@ -4,6 +4,7 @@
 </p>
 <p align="center">
     <a href="https://circleci.com/gh/sbstjn/SliPHP/"><img src="https://img.shields.io/circleci/project/sbstjn/SliPHP/master.svg" alt="Circle CI"></a> 
+    <a href="https://travis-ci.org/sbstjn/SliPHP"><img src="https://img.shields.io/travis/sbstjn/SliPHP.svg" alt="Circle CI"></a> 
     <a href="https://packagist.org/packages/sbstjn/sliphp"><img src="https://img.shields.io/packagist/v/sbstjn/SliPHP.svg" alt="Packagist"></a>
     <a href="https://github.com/sbstjn/SliPHP/blob/master/LICENSE.md"><img src="https://img.shields.io/packagist/l/sbstjn/SliPHP.svg" alt="MIT License"></a>
 </p>
