@@ -4,4 +4,4 @@ COPY . /data/SliPHP
 
 WORKDIR /data/SliPHP
 
-ENTRYPOINT ["phpunit", "--bootstrap", "./load.php", "tests"]
+ENTRYPOINT ["phpunit"]
