@@ -1,5 +1,6 @@
 <?php
 
+require_once __DIR__ . '/src/traits/apply.php';
 require_once __DIR__ . '/src/traits/body.php';
 require_once __DIR__ . '/src/traits/blocks.php';
 require_once __DIR__ . '/src/traits/locals.php';

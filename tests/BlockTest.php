@@ -28,14 +28,14 @@ class BlockTest extends PHPUnit_Framework_TestCase
     {
         $block = new SliPHP\Block('block-empty');
         
-        $this->assertEquals('', $block);
+        $this->assertEquals('', (string)$block);
     }
 
     public function testRenderSimpleHTMLBlock()
     {
         $block = new SliPHP\Block('block-html');
         
-        $this->assertEquals('<span></span>', $block);
+        $this->assertEquals('<span></span>', (string)$block);
     }
 
 }

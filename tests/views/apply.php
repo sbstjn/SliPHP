@@ -1,0 +1,1 @@
+<strong><?=$view->apply('KATZE', 'ucfirst|strtolower')?><?=$view->apply('KATZE', 'strtolower|ucfirst')?></strong>

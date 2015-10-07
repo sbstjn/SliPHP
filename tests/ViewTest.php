@@ -28,14 +28,14 @@ class ViewTest extends PHPUnit_Framework_TestCase
     {
         $view = new SliPHP\View('empty');
         
-        $this->assertEquals('', $view);
+        $this->assertEquals('', (string)$view);
     }
     
     public function testRenderSimpleHTMLView()
     {
         $view = new SliPHP\View('html');
         
-        $this->assertEquals('<strong>Hi!</strong>', $view);
+        $this->assertEquals('<strong>Hi!</strong>', (string)$view);
     }
     
     public function testRenderSimpleViewWithVariables()
@@ -43,6 +43,13 @@ class ViewTest extends PHPUnit_Framework_TestCase
         $view = new SliPHP\View('variables-1');
         $view->set('test', 'lorem-ipsum');
         
-        $this->assertEquals('<strong>lorem-ipsum</strong>', $view);
+        $this->assertEquals('<strong>lorem-ipsum</strong>', (string)$view);
+    }
+    
+    public function testApplyFilters()
+    {
+        $view = new SliPHP\View('apply');
+        
+        $this->assertEquals('<strong>katzeKatze</strong>', (string)$view);
     }
 }
