@@ -4,8 +4,20 @@ Namespace SliPHP;
 
 Trait helper
 {
+    /**
+     * Helper storage
+     *
+     * @var array
+     */
     private $helpers = array();
 
+    /**
+     * Try to call helper function
+     *
+     * @param $name
+     * @param $args
+     * @return mixed
+     */
     public function __call($name, $args)
     {
         if (isset($this->helpers[$name])) {
@@ -17,6 +29,12 @@ Trait helper
         }
     }
 
+    /**
+     * Register new helper function
+     *
+     * @param $name Helper name
+     * @param $callback Helper callback
+     */
     public function helper($name, $callback)
     {
         $this->helpers[$name] = $callback;
