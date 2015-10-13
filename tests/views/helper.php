@@ -1,0 +1,1 @@
+<?=$view->first_strong_second_span($view->get('value'), 'foo')?>

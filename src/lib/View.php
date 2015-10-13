@@ -13,6 +13,7 @@ class View
     use render; // Load render support
     use locals; // Load locals support
     use blocks; // Load blocks support
+    use helper; // Load helper support
     use apply;  // Load apply support
     
     /**
