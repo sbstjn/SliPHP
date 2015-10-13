@@ -1,6 +1,5 @@
 {
     "name": "sbstjn/sliphp",
-    "version": "0.1.1",
     "type": "library",
     "description": "Atomic view and layout engine for PHP 5.4 and above",
     "keywords": ["framework", "view", "layout", "render", "engine", "template"],
