@@ -7,11 +7,17 @@ Trait body
     /**
      * Set ad get the body View
      *
-     * @param View|null $body
+     * @param View|string|null $body
      * @return View
      */
-    public function body(View $body = null)
+    public function body($body = null)
     {
-        return $body === null ? $this->body : $this->body = $body;
+        if ($body === null) {
+            return $this->body;
+        } elseif ($body instanceof View) {
+            return $this->body = $body;
+        } else {
+            return $this->body = new View($body, $this->locals);
+        }
     }
 }

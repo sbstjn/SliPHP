@@ -38,12 +38,13 @@ class View
      * Initialize view
      *
      * @param $name File name without extension
+     * @param $locals Locals Pass external locals store
      * @throws \Exception
      */
-    public function __construct($name)
+    public function __construct($name, $locals = null)
     {
         $file = SLIPHP_VIEWS . $this->sub . '/' . $name . '.php';
-        $this->locals = new \SliPHP\Locals();
+        $this->locals = $locals ? $locals : new \SliPHP\Locals();
 
         if (!file_exists($file)) {
             throw new \Exception('Could not find view ' . $file);
