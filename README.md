@@ -124,6 +124,62 @@ Will be rendered into:
 <strong>katzeKatze</strong>
 ```
 
+### Helper
+
+There is built in support for custom helper functions in SliPHP, just define your helpers like this:
+ 
+```php
+$view = new SliPHP\View('index');
+
+$view->helper('strong', function($value) {
+    return '<strong>' . $value . '</strong>';
+});
+```
+
+And call them inside your views with:
+
+```php
+<?=$view->strong('hi')?>
+```
+
+You can for example use this to easily include your stylesheets:
+
+```php
+$view->helper('css', function($file) {
+    return '<link rel="stylesheet" href="' . $file . '" type="text/css" charset="utf-8" />';
+});
+```
+
+### Locals
+
+Of course you can pass data to your views, SliPHP calls them `Locals` …
+
+```php
+$view = new SliPHP\View('index');
+$view->set('foo', 'value');
+```
+
+You can access all your data using the `$data` variable inside your layouts, views and of course blocks:
+
+```php
+<?=$data->foo?>
+```
+
+It's also possible to share locals between your layout and your views:
+
+```php
+$layout = new SliPHP\Layout('default');
+$layout->set('foo', 'value');
+$layout->body('index');
+```
+
+Inside your `index` view you can now easily access to layout's locals:
+
+```php
+<?=$data->foo?>
+```
+
+
 ## Change log
 
 Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
