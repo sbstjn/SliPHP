@@ -27,7 +27,7 @@ class LayoutTest extends PHPUnit_Framework_TestCase
     public function testSuccessSettingBody()
     {
         $layout = new SliPHP\Layout('layout-empty');
-        $layout->body(new SliPHP\View('empty'));
+        $layout->body('empty');
         
         $this->assertInstanceOf('SliPHP\View', $layout->body());
         $this->assertEquals('', (string)$layout->body());
@@ -98,6 +98,24 @@ class LayoutTest extends PHPUnit_Framework_TestCase
         $this->assertNull($view->get('foo'));
         $this->assertEquals('oof', $layout->body()->get('baz'));
         $this->assertNull($layout->body()->get('foo'));
+    }
 
+    public function testSharedLocalsForBlocks()
+    {
+        $layout = new SliPHP\Layout('layout-empty');
+        $layout->body('empty');
+        $body = $layout->body();
+
+        $layout->set('foo', 'bar');
+        $body->set('baz', 'oof');
+
+        $this->assertInstanceOf('SliPHP\View', $layout->body());
+        $this->assertEquals('bar', $layout->get('foo'));
+        $this->assertEquals('bar', $body->get('foo'));
+        $this->assertEquals('bar', $body->block('block-empty')->get('foo'));
+
+        $this->assertEquals('oof', $body->get('baz'));
+        $this->assertEquals('oof', $layout->get('baz'));
+        $this->assertEquals('oof', $body->block('block-empty')->get('baz'));
     }
 }
