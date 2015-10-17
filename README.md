@@ -126,7 +126,7 @@ Will be rendered into:
 
 ### Helper
 
-The is built in support for custom helper functions in SliPHP, just define your helpers like this:
+There is built in support for custom helper functions in SliPHP, just define your helpers like this:
  
 ```php
 $view = new SliPHP\View('index');
@@ -148,6 +148,21 @@ You can for example use this to easily include your stylesheets:
 $view->helper('css', function($file) {
     return '<link rel="stylesheet" href="' . $file . '" type="text/css" charset="utf-8" />';
 });
+```
+
+### Locals
+
+Of course you can pass data to your views, SliPHP calls them `Locals` …
+
+```php
+$view = new SliPHP\View('index');
+$view->set('foo', 'value');
+```
+
+You can access all your data using the `$data` variable inside your layouts, views and of course blocks:
+
+```php
+$data->foo;
 ```
 
 ## Change log
