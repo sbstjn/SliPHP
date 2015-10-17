@@ -124,6 +124,32 @@ Will be rendered into:
 <strong>katzeKatze</strong>
 ```
 
+### Helper
+
+The is built in support for custom helper functions in SliPHP, just define your helpers like this:
+ 
+```php
+$view = new SliPHP\View('index');
+
+$view->helper('strong', function($value) {
+    return '<strong>' . $value . '</strong>';
+});
+```
+
+And call them inside your views with:
+
+```php
+<?=$view->strong('hi')?>
+```
+
+You can for example use this to easily include your stylesheets:
+
+```php
+$view->helper('css', function($file) {
+    return '<link rel="stylesheet" href="' . $file . '" type="text/css" charset="utf-8" />';
+});
+```
+
 ## Change log
 
 Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
