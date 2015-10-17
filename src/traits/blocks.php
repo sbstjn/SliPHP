@@ -12,6 +12,6 @@ Trait blocks
      */
     public function block($name)
     {
-        return new Block($name);
+        return new Block($name, $this->locals);
     }
 }

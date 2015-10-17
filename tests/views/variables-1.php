@@ -1,1 +1,1 @@
-<strong><?=$view->get('test')?></strong>
+<strong><?=$data->test?></strong>

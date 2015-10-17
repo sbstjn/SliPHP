@@ -8,7 +8,7 @@
             <path d="M30,56 L30,70 L80,130 L90,130 L90,56 L30,56 Z M150,56 L150,70 L100,130 L90,130 L90,56 L150,56 Z" opacity="0.5" fill="#BBD5DC"></path>
             <path d="M150,55 L150,70 C150,70 120,70 110,90 C100,106 100,130 100,130 L80,130 C80,130 80,106 70,90 C60,70 30,70 30,70 L30,55 L150,55 Z" stroke="#FFFFFF" fill="#BBD5DC"></path>
             <text font-family="Oxygen" font-size="24" font-weight="bold" fill="#7898A1">
-                <tspan x="34.7109375" y="49">SliPHP 0.1</tspan>
+                <tspan x="34.7109375" y="49">SliPHP 0.2</tspan>
             </text>
         </g>
     </g>

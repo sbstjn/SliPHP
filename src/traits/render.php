@@ -11,7 +11,7 @@ Trait render
      */
     public function __toString()
     {
-        $render = function (&$view, &$file) {
+        $render = function (&$view, &$file, &$data) {
             ob_start();
             require $file;
 
@@ -21,6 +21,6 @@ Trait render
             return $data;
         };
 
-        return $render($this, $this->file);
+        return $render($this, $this->file, $this->locals);
     }
 }
