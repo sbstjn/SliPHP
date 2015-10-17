@@ -11,7 +11,6 @@ Namespace SliPHP;
 class View
 {
     use render; // Load render support
-    use locals; // Load locals support
     use blocks; // Load blocks support
     use helper; // Load helper support
     use apply;  // Load apply support
@@ -31,6 +30,11 @@ class View
     protected $sub;
 
     /**
+     * @var Locals
+     */
+    public $locals;
+
+    /**
      * Initialize view
      *
      * @param $name File name without extension
@@ -39,11 +43,32 @@ class View
     public function __construct($name)
     {
         $file = SLIPHP_VIEWS . $this->sub . '/' . $name . '.php';
+        $this->locals = new \SliPHP\Locals();
 
         if (!file_exists($file)) {
             throw new \Exception('Could not find view ' . $file);
         }
 
         $this->file = $file;
+    }
+
+    /**
+     * @param $name Local name
+     * @param $data Local value
+     */
+    public function set($name, $data)
+    {
+        $this->locals->$name = $data;
+    }
+
+    /**
+     * Get local value
+     *
+     * @param $name Local name
+     * @return mixed
+     */
+    public function get($name)
+    {
+        return $this->locals->$name;
     }
 }

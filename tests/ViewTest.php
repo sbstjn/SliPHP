@@ -73,4 +73,25 @@ class ViewTest extends PHPUnit_Framework_TestCase
 
         $this->assertEquals('<strong>KATZE</strong><span>foo</span>', (string)$view);
     }
+
+    public function testHelperWithApply()
+    {
+        $view = new SliPHP\View('helper-apply');
+
+        $view->helper('strong', function($value, $view) {
+            return '<strong>' . $view->apply($value, 'strtoupper') . '</strong>';
+        });
+
+        $view->helper('span', function($value, $view) {
+            return '<span>' . $view->apply($value, 'strtoupper') . '</span>';
+        });
+
+        $view->helper('first_strong_second_span', function($first, $second, $view) {
+            return $view->strong($first) . $view->span($second);
+        });
+
+        $view->set('value', 'katze');
+
+        $this->assertEquals('<strong>KATZE</strong><span>FOO</span>', (string)$view);
+    }
 }
