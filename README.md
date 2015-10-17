@@ -162,8 +162,23 @@ $view->set('foo', 'value');
 You can access all your data using the `$data` variable inside your layouts, views and of course blocks:
 
 ```php
-$data->foo;
+<?=$data->foo?>
 ```
+
+It's also possible to share locals between your layout and your views:
+
+```php
+$layout = new SliPHP\Layout('default');
+$layout->set('foo', 'value');
+$layout->body('index');
+```
+
+Inside your `index` view you can now easily access to layout's locals:
+
+```php
+<?=$data->foo?>
+```
+
 
 ## Change log
 
